@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Node / Angular
+node_modules/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# SO
+.DS_Store
+Thumbs.db
