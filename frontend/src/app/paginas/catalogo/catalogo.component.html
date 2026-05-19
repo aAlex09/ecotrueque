@@ -1,0 +1,27 @@
+<h2>Catalogo</h2>
+
+<div>
+  <input
+    type="text"
+    placeholder="Buscar por titulo o descripcion"
+    [(ngModel)]="busqueda"
+  />
+  <button class="btn secondary" (click)="cargar()">Buscar</button>
+</div>
+
+<p class="success" *ngIf="mensaje">{{ mensaje }}</p>
+<p class="error" *ngIf="error">{{ error }}</p>
+
+<div *ngFor="let articulo of articulos" class="card">
+  <h3>{{ articulo.titulo }}</h3>
+  <p>{{ articulo.descripcion }}</p>
+  <p><strong>Categoria:</strong> {{ articulo.categoria }}</p>
+  <p><strong>Estado:</strong> {{ articulo.estado }}</p>
+  <button
+    class="btn"
+    *ngIf="authService.estaLogueado()"
+    (click)="solicitarIntercambio(articulo.id)"
+  >
+    Solicitar intercambio
+  </button>
+</div>

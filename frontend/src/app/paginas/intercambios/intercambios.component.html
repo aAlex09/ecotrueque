@@ -1,0 +1,16 @@
+<h2>Intercambios</h2>
+
+<p class="success" *ngIf="mensaje">{{ mensaje }}</p>
+<p class="error" *ngIf="error">{{ error }}</p>
+
+<div *ngFor="let intercambio of intercambios" class="card">
+  <p><strong>ID:</strong> {{ intercambio.id }}</p>
+  <p><strong>Articulo:</strong> {{ intercambio.articulo_id }}</p>
+  <p><strong>Estado:</strong></p>
+  <select [(ngModel)]="intercambio.estado">
+    <option *ngFor="let estado of estados" [value]="estado">
+      {{ estado }}
+    </option>
+  </select>
+  <button class="btn" (click)="actualizar(intercambio)">Guardar</button>
+</div>

@@ -1,1 +1,24 @@
+# =============================================================================
+# DEPENDENCIAS - EcoTrueque Backend
+# =============================================================================
 
+# Framework web
+fastapi
+uvicorn[standard]
+
+# Base de Datos
+sqlalchemy
+psycopg2-binary
+
+# Autenticación y Seguridad
+python-jose[cryptography]
+passlib==1.7.4
+bcrypt==3.2.2
+
+# Validación de Datos
+pydantic-settings
+email-validator
+
+# Utilidades
+python-dotenv
+python-multipart

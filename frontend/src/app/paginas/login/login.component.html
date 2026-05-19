@@ -1,0 +1,16 @@
+<h2>Iniciar sesion</h2>
+
+<form [formGroup]="form" (ngSubmit)="login()">
+  <div>
+    <label>Correo institucional</label>
+    <input type="email" formControlName="email" />
+  </div>
+  <div>
+    <label>Contrasena</label>
+    <input type="password" formControlName="password" />
+  </div>
+  <button class="btn" type="submit">Entrar</button>
+</form>
+
+<p class="success" *ngIf="mensaje">{{ mensaje }}</p>
+<p class="error" *ngIf="error">{{ error }}</p>

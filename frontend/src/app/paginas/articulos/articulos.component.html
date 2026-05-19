@@ -1,0 +1,36 @@
+<h2>Mis articulos</h2>
+
+<form [formGroup]="form" (ngSubmit)="guardar()" class="card">
+  <h3>{{ editandoId ? 'Editar articulo' : 'Nuevo articulo' }}</h3>
+  <div>
+    <label>Titulo</label>
+    <input type="text" formControlName="titulo" />
+  </div>
+  <div>
+    <label>Descripcion</label>
+    <textarea formControlName="descripcion"></textarea>
+  </div>
+  <div>
+    <label>Categoria</label>
+    <input type="text" formControlName="categoria" />
+  </div>
+  <div>
+    <label>Estado</label>
+    <input type="text" formControlName="estado" />
+  </div>
+  <button class="btn" type="submit">
+    {{ editandoId ? 'Actualizar' : 'Crear' }}
+  </button>
+</form>
+
+<p class="success" *ngIf="mensaje">{{ mensaje }}</p>
+<p class="error" *ngIf="error">{{ error }}</p>
+
+<div *ngFor="let articulo of articulos" class="card">
+  <h3>{{ articulo.titulo }}</h3>
+  <p>{{ articulo.descripcion }}</p>
+  <p><strong>Categoria:</strong> {{ articulo.categoria }}</p>
+  <p><strong>Estado:</strong> {{ articulo.estado }}</p>
+  <button class="btn secondary" (click)="editar(articulo)">Editar</button>
+  <button class="btn" (click)="eliminar(articulo)">Eliminar</button>
+</div>

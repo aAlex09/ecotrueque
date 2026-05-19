@@ -1,0 +1,17 @@
+<nav class="nav">
+  <a routerLink="/catalogo">Catalogo</a>
+  <a routerLink="/articulos" *ngIf="authService.estaLogueado()">Mis articulos</a>
+  <a routerLink="/intercambios" *ngIf="authService.estaLogueado()"
+    >Intercambios</a
+  >
+  <a routerLink="/perfil" *ngIf="authService.estaLogueado()">Perfil</a>
+  <a routerLink="/login" *ngIf="!authService.estaLogueado()">Login</a>
+  <a routerLink="/registro" *ngIf="!authService.estaLogueado()">Registro</a>
+  <a href="#" (click)="cerrarSesion()" *ngIf="authService.estaLogueado()"
+    >Salir</a
+  >
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
